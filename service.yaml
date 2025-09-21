@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spotify-clone-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: spotify-clone
+  ports:
+    - port: 80        # External port
+      targetPort: 80  # Pod container port
+      protocol: TCP
